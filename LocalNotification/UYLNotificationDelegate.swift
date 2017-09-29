@@ -11,8 +11,8 @@ import UserNotifications
 
 class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        completionHandler([.alert,.sound])
-        print("willPresent")
+        completionHandler([.alert,.sound])
+        print("앱이 실행 되고 있거나 알림을 클릭 했을때 호출 된다.")
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
