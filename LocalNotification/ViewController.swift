@@ -46,6 +46,8 @@ class ViewController: UIViewController ,UNUserNotificationCenterDelegate{
         }
         else
         {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
             let notification = UILocalNotification()
             notification.alertBody = "Notification"
             notification.fireDate = NSDate(timeIntervalSinceNow:60) as Date

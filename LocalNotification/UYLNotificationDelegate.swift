@@ -10,11 +10,13 @@ import Foundation
 import UserNotifications
 
 class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert,.sound])
         print("앱이 실행 되고 있거나 알림을 클릭 했을때 호출 된다.")
     }
     
+    @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Custom Action도 가능
         switch response.actionIdentifier {
